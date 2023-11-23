@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Mocha Tests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Make sure that the href on this link element points at the proper CSS file. -->
+    <link rel="stylesheet" href="/test-files/mocha.css" />
+    <!-- <script type="importmap">
+  {
+    "imports": {
+    }
+  }
+</script> -->
+  </head>
+  <body>
+    <div id="mocha"></div>
+    <!-- Make sure that these script files point to the correct mocha and chai files -->
+    <script src="/test-files/chai.js"></script>
+    <script src="/test-files/mocha.js"></script>
+    <script type="module">
+      mocha.setup({ ui: "tdd", timeout: "2000" });
+      mocha.checkLeaks();
+      window.addEventListener("load", function () {
+        // Callback so that the test results get reported to CI
+        mocha.run(function (failures) {
+          window._testResults = {
+            done: true,
+            failures,
+            succeeded: failures ? false : true,
+          };
+        });
+      });
+    </script>
+    <!-- Include the test files as script elements. -->
+    <!-- <script src="/path/to/file.js" type="module"></script> -->
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{
+	"name": "uncluttered-couse-setup",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "npx playwright test"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "MIT",
+	"devDependencies": {
+		"@playwright/test": "^1.37.1",
+		"c8": "8.0.1",
+		"http-server": "14.1.1"
+	}
+}

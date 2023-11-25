@@ -14,5 +14,8 @@ done
 
 
 DATA_DIR="$(mktemp -d -t 'firefox-unsafe_data_dir.XXXXXXXXXX')"
-"${FIREFOX}" -profile $DATA_DIR -no-remote -new-instance \
-        http://localhost:8888/ >/dev/null 2>&1 &!
+"${FIREFOX}" \
+  -profile $DATA_DIR \
+  -no-remote \
+  -url http://localhost:8888/ \
+  >/dev/null 2>&1 &!

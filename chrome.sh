@@ -22,4 +22,4 @@ DATA_DIR="$(mktemp -d -t 'chrome-unsafe_data_dir.XXXXXXXXXX')"
         --no-first-run \
         --non-secure \
         --user-data-dir="${DATA_DIR}" \
-        https://localhost:8888/ >/dev/null 2>&1 &!
+        http://localhost:8888/ >/dev/null 2>&1 &!
